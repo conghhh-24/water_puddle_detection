@@ -69,9 +69,11 @@ def convert_mat_to_h5(src_folder, h5_filepath):
 
 
 if __name__ == "__main__":
-    # 源文件夹路径
-    source_dir = '../data/mat2'
-    # h5文件的保存路径
-    output_h5 = 'data/text_data.h5'
+    # 获取脚本所在目录的绝对路径
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # 构建源文件夹路径（相对于项目根目录）
+    source_dir = os.path.join(script_dir, '..', 'data', 'mat2')
+    # 构建输出h5文件路径
+    output_h5 = os.path.join(script_dir, '..', 'data', 'test_data.h5')
 
     convert_mat_to_h5(source_dir, output_h5)
